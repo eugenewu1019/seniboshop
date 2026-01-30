@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Senibo.shop - Global Trade & Logistics Solutions</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712', // Slate 950
+              accent: '#F59E0B', // Amber 500
+              glow: '#D97706', // Amber 600
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Ico -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+  class="bg-slate-50 text-slate-900 dark:bg-[#030712] dark:text-slate-200 overflow-x-hidden selection:bg-brand-accent/30 selection:text-brand-accent">
+
+  <div id="app" class="relative min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-[#030712]/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
+      <!-- Top Bar -->
+      <div
+        class="hidden md:flex justify-between items-center px-6 py-1 bg-slate-100 dark:bg-white/5 text-[10px] uppercase font-medium tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10">
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1.5">
+            <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div> <span
+              data-i18n="general.systemStatus">System Operational</span>
+          </span>
+          <span class="hidden lg:inline text-slate-300 dark:text-white/20">|</span>
+          <span class="hidden lg:flex items-center gap-1"><i data-lucide="globe" class="w-3 h-3"></i> <span
+              data-i18n="general.globalNetwork">Global Network</span></span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="mailto:logistics@senibo.shop" class="hover:text-brand-accent transition-colors"
+            data-i18n="general.contactEmail">logistics@senibo.shop</a>
+        </div>
+      </div>
+
+      <!-- Main Nav -->
+      <nav class="container mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo(0,0)">
+          <div class="logo-prism w-10 min-w-[40px] h-10 flex items-center justify-center relative">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+              <defs>
+                <linearGradient id="headerPrismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#F5C400;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="#334155" />
+              <path d="M50 5 L90 25 L50 45 Z" fill="url(#headerPrismGrad)" />
+              <path d="M50 45 L90 25 L90 75 Z" fill="#F5C400" opacity="0.8" />
+              <path d="M50 45 L90 75 L50 95 Z" fill="#B45309" opacity="0.6" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-baseline gap-0.5">
+              <span
+                class="text-2xl font-display font-black tracking-tighter text-slate-900 dark:text-white leading-none">SENIBO<span
+                  class="text-brand-accent">.</span>SHOP</span>
+            </div>
+            <span class="text-[8px] font-bold tracking-[0.3em] text-slate-400 dark:text-slate-500 uppercase mt-1">Global
+              Logistics</span>
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+            data-i18n="nav.0.label">Home</a>
+          <a href="#services"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+            data-i18n="nav.1.label">Services</a>
+          <a href="#live-dashboard"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+            data-i18n="nav.2.label">Status</a>
+          <a href="#about"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+            data-i18n="nav.3.label">About Us</a>
+          <a href="#contact"
+            class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-accent dark:hover:text-brand-accent transition-colors"
+            data-i18n="nav.4.label">Contact</a>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-white/10">
+          <!-- Language -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+              <i data-lucide="globe" class="w-4 h-4 text-slate-500"></i>
+              <span id="current-lang-label"
+                class="text-xs font-medium text-slate-600 dark:text-slate-300">English</span>
+            </button>
+            <!-- Invisible bridge to maintain hover -->
+            <div class="absolute right-0 top-full pt-2 hidden group-hover:block">
+              <div
+                class="w-32 bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-white/10 rounded-lg shadow-xl py-1 animate-in fade-in zoom-in-95 duration-200">
+                <button
+                  class="w-full text-left px-4 py-2 text-xs hover:bg-slate-100 dark:hover:bg-white/5 text-slate-600 dark:text-slate-300"
+                  data-lang="en">English</button>
+                <button
+                  class="w-full text-left px-4 py-2 text-xs hover:bg-slate-100 dark:hover:bg-white/5 text-slate-600 dark:text-slate-300"
+                  data-lang="zh">中文</button>
+                <button
+                  class="w-full text-left px-4 py-2 text-xs hover:bg-slate-100 dark:hover:bg-white/5 text-slate-600 dark:text-slate-300"
+                  data-lang="jp">日本語</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme -->
+          <button
+            class="theme-toggle p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+            <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+          </button>
+
+          <!-- Mobile Menu Btn -->
+          <button id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu"
+        class="fixed inset-0 z-50 bg-white dark:bg-[#030712] transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 gap-6 md:hidden">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-white/10">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a href="#home" class="text-2xl font-bold"
+          onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"
+          data-i18n="nav.0.label">Home</a>
+        <a href="#services" class="text-2xl font-bold"
+          onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"
+          data-i18n="nav.1.label">Services</a>
+        <a href="#live-dashboard" class="text-2xl font-bold"
+          onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"
+          data-i18n="nav.2.label">Status</a>
+        <a href="#about" class="text-2xl font-bold"
+          onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"
+          data-i18n="nav.3.label">About Us</a>
+        <a href="#contact" class="text-2xl font-bold"
+          onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"
+          data-i18n="nav.4.label">Contact</a>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-grid-slate">
+      <!-- Watermark -->
+      <div class="watermark-text top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-5deg] opacity-5">LOGISTICS
+      </div>
+
+      <!-- Background effects (simulated) -->
+      <div class="absolute inset-0 bg-white dark:bg-[#030712] -z-20"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-[#030712]/50 dark:to-[#030712] -z-10">
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Text Content -->
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-xs font-semibold tracking-wide uppercase animate-fade-in-up">
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+            </span>
+            <span data-i18n="hero.badge">Next Gen Logistics AI</span>
+          </div>
+
+          <h1
+            class="text-4xl md:text-7xl font-display font-bold leading-[1.05] tracking-tight text-slate-900 dark:text-white">
+            <span data-i18n="hero.titlePrefix">Seamless</span> <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-glow"
+              data-i18n="hero.titleGlobal">Global</span> <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-glow"
+              data-i18n="hero.titleSolutions">Logistics Solutions</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl border-l-4 border-brand-accent pl-6"
+            data-i18n="hero.subtitle">
+            Connecting markets through Sea, Air, and Land. We deliver reliability, efficiency, and scale to your supply
+            chain.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <button
+              onclick="document.querySelector('[data-tab=\'quote\']').click(); document.getElementById('home').scrollIntoView();"
+              class="btn-sheen px-8 py-4 bg-brand-accent hover:bg-brand-glow text-brand-dark font-bold rounded-xl transition-all shadow-lg shadow-brand-accent/20 flex items-center gap-2 group">
+              <span data-i18n="hero.cta">Get a Quote</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+            <a href="#services"
+              class="px-8 py-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-700 dark:text-white font-medium rounded-xl transition-all shadow-sm flex items-center gap-2">
+              <span data-i18n="hero.explore">Explore Services</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Card -->
+        <div class="relative max-w-md mx-auto w-full">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-brand-accent/50 to-purple-600/50 rounded-2xl blur opacity-75 animate-pulse-slow">
+          </div>
+          <div class="relative glass-panel rounded-2xl p-6 md:p-8">
+            <!-- Tabs -->
+            <div class="flex p-1 bg-slate-200/50 dark:bg-black/60 rounded-xl mb-8 relative">
+              <button data-tab="quote"
+                class="tab-btn w-1/2 py-2.5 text-sm font-bold text-slate-600 dark:text-slate-400 rounded-lg transition-all active text-brand-accent bg-brand-accent/10 shadow-sm"
+                data-i18n="hero.tabs.quote">Request Quote</button>
+              <button data-tab="track"
+                class="tab-btn w-1/2 py-2.5 text-sm font-bold text-slate-600 dark:text-slate-400 rounded-lg transition-all"
+                data-i18n="hero.tabs.track">Track Shipment</button>
+            </div>
+
+            <!-- Track Tab -->
+            <div id="tab-track" class="tab-content hidden space-y-6">
+              <div class="flex items-center justify-between text-xs text-brand-accent font-mono mb-2">
+                <span class="flex items-center gap-1.5"><i data-lucide="satellite" class="w-3 h-3"></i> <span
+                    data-i18n="hero.trackTab.systemOnline">System Online</span></span>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-semibold text-slate-500 uppercase tracking-wider"
+                  data-i18n="hero.trackTab.label">Tracking Number</label>
+                <div class="relative group">
+                  <input type="text" id="track-input" placeholder="0000000" maxlength="7"
+                    class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-4 pl-12 font-mono text-lg outline-none focus:border-brand-accent transition-colors text-slate-900 dark:text-white placeholder:text-slate-300">
+                  <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
+                </div>
+              </div>
+
+              <button id="track-submit-btn"
+                class="w-full py-4 bg-slate-900 dark:bg-white/10 hover:bg-slate-800 dark:hover:bg-white/20 text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 group">
+                <i data-lucide="crosshair" class="w-5 h-5 group-hover:rotate-45 transition-transform"></i>
+                <span data-i18n="hero.trackTab.btnIdle">Trace Cargo</span>
+              </button>
+            </div>
+
+            <!-- Quote Tab -->
+            <div id="tab-quote" class="tab-content space-y-6">
+              <div class="grid grid-cols-3 gap-2 mb-6">
+                <button
+                  class="mode-btn flex flex-col items-center justify-center gap-1 py-3 px-2 rounded-xl border border-slate-200 dark:border-white/10 hover:border-brand-accent/50 transition-all text-xs font-medium text-slate-600 dark:text-slate-400 active bg-brand-accent text-slate-900 border-brand-accent shadow-lg shadow-brand-accent/20"
+                  data-mode="Sea">
+                  <i data-lucide="ship" class="w-5 h-5"></i>
+                  <span data-i18n="hero.quoteTab.modes.0">Sea</span>
+                </button>
+                <button
+                  class="mode-btn flex flex-col items-center justify-center gap-1 py-3 px-2 rounded-xl border border-slate-200 dark:border-white/10 hover:border-brand-accent/50 transition-all text-xs font-medium text-slate-600 dark:text-slate-400"
+                  data-mode="Air">
+                  <i data-lucide="plane" class="w-5 h-5"></i>
+                  <span data-i18n="hero.quoteTab.modes.1">Air</span>
+                </button>
+                <button
+                  class="mode-btn flex flex-col items-center justify-center gap-1 py-3 px-2 rounded-xl border border-slate-200 dark:border-white/10 hover:border-brand-accent/50 transition-all text-xs font-medium text-slate-600 dark:text-slate-400"
+                  data-mode="Land">
+                  <i data-lucide="truck" class="w-5 h-5"></i>
+                  <span data-i18n="hero.quoteTab.modes.2">Land</span>
+                </button>
+              </div>
+
+              <div class="space-y-4">
+                <div class="relative custom-select" id="quote-origin-container">
+                  <i data-lucide="map-pin"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 z-10"></i>
+                  <button type="button" onclick="toggleDropdown('origin')" id="quote-origin-btn"
+                    class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 pl-10 pr-10 text-sm outline-none focus:border-brand-accent transition-colors text-slate-700 dark:text-slate-200 text-left flex items-center justify-between">
+                    <span id="quote-origin-label" data-i18n="hero.quoteTab.originPlaceholder">Select Origin</span>
+                    <i data-lucide="chevron-down" class="text-slate-400 w-4 h-4"></i>
+                  </button>
+                  <div id="quote-origin-options"
+                    class="absolute z-50 w-full mt-2 bg-white dark:bg-[#1E293B] border border-slate-200 dark:border-white/10 rounded-xl shadow-2xl hidden max-h-60 overflow-y-auto custom-scrollbar backdrop-blur-md">
+                    <!-- Options populated by JS -->
+                  </div>
+                  <input type="hidden" id="quote-origin-input" value="">
+                </div>
+
+                <div class="relative custom-select" id="quote-dest-container">
+                  <i data-lucide="navigation"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 z-10"></i>
+                  <button type="button" onclick="toggleDropdown('dest')" id="quote-dest-btn"
+                    class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 pl-10 pr-10 text-sm outline-none focus:border-brand-accent transition-colors text-slate-700 dark:text-slate-200 text-left flex items-center justify-between">
+                    <span id="quote-dest-label" data-i18n="hero.quoteTab.destPlaceholder">Select Destination</span>
+                    <i data-lucide="chevron-down" class="text-slate-400 w-4 h-4"></i>
+                  </button>
+                  <div id="quote-dest-options"
+                    class="absolute z-50 w-full mt-2 bg-white dark:bg-[#1E293B] border border-slate-200 dark:border-white/10 rounded-xl shadow-2xl hidden max-h-60 overflow-y-auto custom-scrollbar backdrop-blur-md">
+                    <!-- Options populated by JS -->
+                  </div>
+                  <input type="hidden" id="quote-dest-input" value="">
+                </div>
+              </div>
+
+              <button id="quote-submit-btn"
+                class="w-full py-4 bg-brand-accent hover:bg-brand-glow text-brand-dark font-bold rounded-xl transition-all shadow-lg shadow-brand-accent/20 flex items-center justify-center gap-2 group">
+                <i data-lucide="calculator" class="w-5 h-5"></i>
+                <span data-i18n="hero.quoteTab.calculateBtn">Calculate Price</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-2xl mb-16">
+          <span class="text-brand-accent font-mono text-sm tracking-widest uppercase mb-2 block"
+            data-i18n="services.label">Global Solutions</span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6"
+            data-i18n="services.title">Our Services</h2>
+          <p class="text-xl text-slate-600 dark:text-slate-400 font-light" data-i18n="services.subtitle">Comprehensive
+            solutions tailored to your cargo needs.</p>
+        </div>
+
+        <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service items rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD SECTION -->
+    <section id="live-dashboard"
+      class="py-24 bg-white dark:bg-black/40 border-y border-slate-200 dark:border-white/5 relative overflow-hidden transition-colors duration-500">
+      <!-- Background Grid -->
+      <div
+        class="absolute inset-0 opacity-[0.03] dark:opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] [background-size:24px_24px]">
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 gap-4">
+          <div class="max-w-xl">
+            <div class="flex items-center gap-2 mb-2 text-brand-accent">
+              <i data-lucide="activity" class="w-4 h-4"></i>
+              <span class="text-[10px] font-bold uppercase tracking-widest" data-i18n="dashboard.label">Operations
+                Center</span>
+            </div>
+            <h2 class="text-4xl font-display font-bold text-slate-900 dark:text-white" data-i18n="dashboard.title">
+              Real-time network activity and system status.</h2>
+          </div>
+          <div
+            class="flex items-center gap-3 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full h-fit">
+            <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_8px_#10b981]"></div>
+            <span class="text-[10px] font-mono text-emerald-600 font-bold uppercase tracking-widest">System
+              Optimal</span>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 mb-6 items-stretch">
+          <!-- Column 1: Clocks -->
+          <div class="flex flex-col h-[210px]">
+            <div
+              class="bg-white/40 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-4 backdrop-blur-md h-full flex flex-col">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400"
+                  data-i18n="dashboard.timeline">Timeline</span>
+                <i data-lucide="globe" class="text-brand-accent w-4 h-4"></i>
+              </div>
+
+              <div class="grid grid-cols-2 gap-x-3 gap-y-3 my-auto px-0.5">
+                <!-- Clock 1: Asia -->
+                <div class="text-left">
+                  <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5"
+                    id="clock-asia-label">HQ / ASIA</div>
+                  <div id="clock-asia-time"
+                    class="text-base font-mono font-bold text-slate-900 dark:text-white mb-0.5 tabular-nums whitespace-nowrap">
+                    00:00:00</div>
+                  <div id="clock-asia-city" class="text-[10px] text-slate-500">Singapore</div>
+                </div>
+                <!-- Clock 2: Europe -->
+                <div class="text-left">
+                  <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5"
+                    id="clock-eu-label">
+                    EUROPE</div>
+                  <div id="clock-eu-time"
+                    class="text-base font-mono font-bold text-slate-400 dark:text-slate-300 mb-0.5 tabular-nums whitespace-nowrap">
+                    00:00:00</div>
+                  <div id="clock-eu-city" class="text-[10px] text-slate-500">London</div>
+                </div>
+                <!-- Clock 3: Americas -->
+                <div class="text-left">
+                  <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5"
+                    id="clock-na-label">
+                    AMERICAS</div>
+                  <div id="clock-na-time"
+                    class="text-base font-mono font-bold text-slate-400 dark:text-slate-300 mb-0.5 tabular-nums whitespace-nowrap">
+                    00:00:00</div>
+                  <div id="clock-na-city" class="text-[10px] text-slate-500">New York</div>
+                </div>
+                <!-- Clock 4: Middle East -->
+                <div class="text-left">
+                  <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5"
+                    id="clock-me-label">
+                    MIDDLE EAST</div>
+                  <div id="clock-me-time"
+                    class="text-base font-mono font-bold text-slate-400 dark:text-slate-300 mb-0.5 tabular-nums whitespace-nowrap">
+                    00:00:00</div>
+                  <div id="clock-me-city" class="text-[10px] text-slate-500">Dubai</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Server Status -->
+          <div class="flex flex-col h-[210px]">
+            <div
+              class="bg-white/40 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-5 backdrop-blur-md h-full flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400"
+                  data-i18n="dashboard.labels.serverStatus">Server Status</span>
+                <i data-lucide="layers" class="text-brand-accent w-4 h-4"></i>
+              </div>
+
+              <div class="space-y-4 my-auto">
+                <div>
+                  <div class="flex justify-between text-[10px] font-bold mb-0.5">
+                    <span class="text-slate-500" data-i18n="dashboard.metrics.uptime">Uptime</span>
+                    <span class="text-emerald-500">99.99%</span>
+                  </div>
+                  <div class="w-full h-1 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full bg-emerald-500 rounded-full" style="width: 99.99%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-[10px] font-bold mb-0.5">
+                    <span class="text-slate-500" data-i18n="dashboard.metrics.load">Load</span>
+                    <span class="text-brand-accent">42%</span>
+                  </div>
+                  <div class="w-full h-1 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full bg-brand-accent rounded-full" style="width: 42%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-auto flex items-center gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <div class="w-1 h-4 bg-emerald-500/20 rounded-full flex items-end">
+                  <div class="w-full h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sys</div>
+                  <div class="text-[10px] font-bold text-emerald-500 leading-none" data-i18n="general.systemOptimal">
+                    OPTIMIZED</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Live Logs -->
+          <div class="flex flex-col h-[210px]">
+            <div
+              class="terminal-light rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 h-full flex flex-col shadow-lg">
+              <div class="terminal-header-light px-3 py-1.5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="flex gap-1 mr-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-red-400/20 border border-red-400/30"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-amber-400/20 border border-amber-400/30"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-400/20 border border-emerald-400/30"></div>
+                  </div>
+                  <i data-lucide="terminal" class="w-3 h-3 text-slate-400"></i>
+                  <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest"
+                    data-i18n="dashboard.logsTitle">Live Logs</span>
+                </div>
+                <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
+              </div>
+              <div id="terminal-logs"
+                class="p-3 flex-grow font-mono text-[9px] overflow-y-auto space-y-1.5 scrollbar-none bg-white/50 dark:bg-transparent">
+                <!-- Logs will be appended here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics Bottom Row -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-brand-accent/5 border border-brand-accent/10 rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+              <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white tabular-nums"><span
+                  id="metric-latency">24</span>ms</div>
+              <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                data-i18n="dashboard.labels.avgLatency">Avg Latency</div>
+            </div>
+          </div>
+
+          <div class="bg-brand-accent/5 border border-brand-accent/10 rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white tabular-nums"><span
+                  id="metric-data">4.2</span>TB</div>
+              <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                data-i18n="dashboard.labels.dataProcessed">Data Processed</div>
+            </div>
+          </div>
+
+          <div class="bg-brand-accent/5 border border-brand-accent/10 rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+              <i data-lucide="git-branch" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-slate-900 dark:text-white tabular-nums" id="metric-routes">
+                1,204</div>
+              <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                data-i18n="dashboard.labels.activeRoutes">Active Routes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1 relative">
+        <div class="absolute -inset-4 bg-brand-accent/5 rounded-[2rem] blur-2xl"></div>
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+          <img
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            alt="Warehouse"
+            class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+
+          <!-- Live Metric Overlay -->
+          <div
+            class="absolute bottom-6 left-6 right-6 p-4 bg-white/90 backdrop-blur-md rounded-xl border border-white/20 shadow-xl translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase"
+                data-i18n="about.liveMetric">Live Metric</span>
+              <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <div class="text-xs font-bold text-slate-500 mb-1" data-i18n="about.warehouseCapacity">Warehouse
+                  Capacity</div>
+                <div class="text-2xl font-mono font-bold text-slate-900">82.4%</div>
+              </div>
+              <div class="text-[10px] font-bold text-emerald-600">+1.2% (24h)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2 space-y-8">
+        <div class="inline-block px-3 py-1 rounded-lg bg-brand-accent/10 border border-brand-accent/20">
+          <span class="text-brand-accent font-mono text-[10px] font-bold tracking-widest uppercase"
+            data-i18n="about.label">Corporate Profile</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white" data-i18n="about.title">
+          Who We Are</h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed border-l-2 border-brand-accent pl-6"
+          data-i18n="about.content">
+          Senibo.shop is a premier international trade and logistics provider. Founded with a vision to simplify
+          global commerce, we operate a robust network spanning major ports and trade hubs worldwide.
+        </p>
+
+        <div id="about-stats" class="grid grid-cols-3 gap-6 pt-8">
+          <!-- Stats rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24 bg-slate-50 dark:bg-white/5 relative">
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
+      <div>
+        <span class="text-brand-accent font-mono text-sm tracking-widest uppercase"
+          data-i18n="contact.label">Connect</span>
+        <h2 class="text-4xl font-display font-bold text-slate-900 dark:text-white mt-2 mb-6" data-i18n="contact.title">
+          Contact Us</h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400 mb-12" data-i18n="contact.subtitle">Ready to move your
+          business forward? Get in touch.</p>
+
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 group">
+            <div
+              class="w-12 h-12 rounded-xl bg-white dark:bg-white/5 flex items-center justify-center text-brand-accent shadow-sm group-hover:scale-110 transition-transform">
+              <i data-lucide="map" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="contact.labels.headquarters">
+                Headquarters</h3>
+              <p class="text-slate-500 leading-relaxed max-w-xs" data-i18n="contact.info.address">12 Marina Boulevard,
+                Singapore</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 group">
+            <div
+              class="w-12 h-12 rounded-xl bg-white dark:bg-white/5 flex items-center justify-center text-brand-accent shadow-sm group-hover:scale-110 transition-transform">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="contact.labels.inquiries">
+                Inquiries</h3>
+              <a href="mailto:logistics@senibo.shop" class="text-slate-500 hover:text-brand-accent transition-colors"
+                data-i18n="contact.info.email">logistics@senibo.shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel p-8 rounded-2xl bg-white dark:bg-[#0F172A] shadow-xl">
+        <form onsubmit="event.preventDefault(); alert('Message sent (Demo)');">
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6" data-i18n="contact.form.title">Send
+            Message</h3>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-500 uppercase mb-2"
+                data-i18n="contact.form.name">Your Name</label>
+              <input type="text"
+                class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 outline-none focus:border-brand-accent transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-500 uppercase mb-2"
+                data-i18n="contact.form.email">Email Address</label>
+              <input type="email"
+                class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 outline-none focus:border-brand-accent transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-500 uppercase mb-2"
+                data-i18n="contact.form.message">Message</label>
+              <textarea rows="4"
+                class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 outline-none focus:border-brand-accent transition-colors"></textarea>
+            </div>
+            <button
+              class="w-full py-4 bg-brand-accent hover:bg-brand-glow text-brand-dark font-bold rounded-lg transition-all"
+              data-i18n="contact.form.submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-white py-16 border-t border-white/10">
+    <div class="container mx-auto px-6">
+      <!-- Links & Modals Triggers -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+        <div class="flex items-center gap-3 group">
+          <div class="logo-prism w-10 h-10 flex items-center justify-center relative">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+              <defs>
+                <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#F5C400;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="#334155" />
+              <path d="M50 5 L90 25 L50 45 Z" fill="url(#prismGrad)" opacity="0.9" />
+              <path d="M50 45 L90 25 L90 75 Z" fill="#F5C400" opacity="0.8" />
+              <path d="M50 45 L90 75 L50 95 Z" fill="#B45309" opacity="0.7" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-baseline gap-0.5">
+              <span class="text-2xl font-display font-black tracking-tighter text-white leading-none">SENIBO<span
+                  class="text-brand-accent">.</span>SHOP</span>
+            </div>
+            <span class="text-[8px] font-bold tracking-[0.3em] text-slate-500 uppercase mt-1">Global Logistics</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-sm text-slate-400">
+          <button onclick="openModal('privacy')" class="hover:text-white transition-colors"
+            data-i18n="general.privacyPolicy">Privacy Policy</button>
+          <button onclick="openModal('terms')" class="hover:text-white transition-colors"
+            data-i18n="general.termsOfService">Terms of Service</button>
+          <button onclick="openModal('sitemap')" class="hover:text-white transition-colors"
+            data-i18n="general.sitemap">Sitemap</button>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p data-i18n="footer.copyright">© 2024 Senibo.shop Logistics. All rights reserved.</p>
+        <p data-i18n="footer.disclaimer">Connecting global markets with speed, reliability, and innovation.</p>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  <!-- MODALS CONTAINER -->
+  <div id="modals" class="relative z-[100]">
+
+    <!-- GENERIC MODAL TEMPLATE STRUCTURE FOR ALL MODALS -->
+    <!-- Service Modal -->
+    <div id="modal-service" class="modal-overlay hidden fixed inset-0 z-[100]">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="absolute inset-y-0 right-0 w-full max-w-lg bg-white dark:bg-[#0F172A] shadow-2xl animate-in slide-in-from-right duration-300 p-8 overflow-y-auto">
+        <button onclick="closeModal()"
+          class="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+          <i data-lucide="x" class="w-6 h-6 text-slate-500"></i>
+        </button>
+        <div class="mt-8 space-y-6">
+          <span
+            class="px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-bold uppercase tracking-wider"
+            data-i18n="modals.serviceDetail.badge">Premium Service</span>
+          <h2 id="modal-service-title" class="text-3xl font-display font-bold text-slate-900 dark:text-white"></h2>
+          <p id="modal-service-desc" class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+          <div class="border-t border-slate-200 dark:border-white/10 pt-6">
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4"
+              data-i18n="modals.serviceDetail.featuresTitle">Features</h3>
+            <ul id="modal-service-features" class="space-y-3"></ul>
+          </div>
+          <button onclick="alert('Inquiry Started')"
+            class="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl mt-8"
+            data-i18n="modals.serviceDetail.btnInquire">Inquire About This</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Result Modal -->
+    <div id="modal-trackResult" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-2xl rounded-3xl shadow-2xl p-0 max-h-[90vh] overflow-hidden animate-in zoom-in-95 duration-300 border border-slate-200 dark:border-white/10">
+        <!-- Modal Header -->
+        <div
+          class="p-6 md:p-8 border-b border-slate-100 dark:border-white/5 flex items-center justify-between bg-slate-50/50 dark:bg-white/[0.02]">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+              <i data-lucide="package-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h2 id="track-id-display"
+                class="text-xl font-display font-bold text-slate-900 dark:text-white font-mono tracking-tight"></h2>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                  data-i18n="modals.tracking.statusActive">Active Shipment</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="closeModal()"
+            class="p-2 rounded-xl hover:bg-slate-200 dark:hover:bg-white/10 transition-colors">
+            <i data-lucide="x" class="w-5 h-5 text-slate-400"></i>
+          </button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="p-6 md:p-8 overflow-y-auto max-h-[calc(90vh-100px)] custom-scrollbar">
+          <div
+            class="mb-10 p-5 bg-gradient-to-br from-slate-50 to-white dark:from-white/5 dark:to-transparent border border-slate-100 dark:border-white/5 rounded-2xl shadow-sm">
+            <span class="text-[10px] font-bold text-brand-accent uppercase tracking-[0.2em] block mb-2"
+              data-i18n="modals.tracking.currentStatus">Current Status</span>
+            <div id="track-current-status"
+              class="text-2xl font-display font-bold text-slate-900 dark:text-white tracking-tight"></div>
+          </div>
+
+          <div class="relative px-2">
+            <div id="track-timeline" class="space-y-0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Result Modal -->
+    <div id="modal-quoteResult" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-lg rounded-2xl shadow-2xl p-0 overflow-hidden animate-in zoom-in-95 duration-200">
+        <div class="bg-slate-900 p-6 text-white relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:16px_16px] opacity-10">
+          </div>
+          <button onclick="closeModal()" class="absolute top-6 right-6"><i data-lucide="x"
+              class="w-6 h-6 text-white/50 hover:text-white"></i></button>
+          <h3 class="text-lg font-bold text-brand-accent mb-1" data-i18n="modals.quoteResult.title">Freight Estimate
+          </h3>
+          <div class="flex items-center gap-4 mt-4">
+            <div>
+              <div id="quote-origin-code" class="text-3xl font-black"></div>
+              <div id="quote-origin-full" class="text-xs text-slate-400 truncate max-w-[100px]"></div>
+            </div>
+            <div class="flex-1 border-t-2 border-dashed border-white/20 relative">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 px-2" id="quote-icon-container">
+                <i data-lucide="plane" class="w-4 h-4 text-brand-accent rotate-90"></i>
+              </div>
+            </div>
+            <div class="text-right">
+              <div id="quote-dest-code" class="text-3xl font-black"></div>
+              <div id="quote-dest-full" class="text-xs text-slate-400 truncate max-w-[100px]"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8 space-y-4">
+          <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-white/5">
+            <span class="text-slate-500" id="quote-mode"></span>
+            <span class="font-bold text-slate-800 dark:text-white" id="quote-days"></span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-slate-500" data-i18n="modals.quoteResult.baseFreight">Base Freight</span>
+              <span class="font-mono text-slate-700 dark:text-slate-300" id="quote-cost-freight"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500" data-i18n="modals.quoteResult.fuelSurcharge">Fuel Surcharge</span>
+              <span class="font-mono text-slate-700 dark:text-slate-300" id="quote-cost-fuel"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500" data-i18n="modals.quoteResult.insurance">Insurance</span>
+              <span class="font-mono text-slate-700 dark:text-slate-300" id="quote-cost-insurance"></span>
+            </div>
+          </div>
+          <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-white/5">
+            <span class="font-bold text-slate-900 dark:text-white" data-i18n="modals.quoteResult.total">TOTAL
+              ESTIMATE</span>
+            <span class="text-2xl font-black text-brand-accent font-mono" id="quote-cost-total"></span>
+          </div>
+          <p class="text-xs text-slate-400 text-center mt-4" data-i18n="modals.quoteResult.disclaimer">Disclaimer
+            text...</p>
+
+          <div class="text-xs text-center text-slate-500 bg-slate-100 dark:bg-white/5 py-2 rounded">
+            <span data-i18n="modals.quoteResult.validUntilLabel">Valid until</span>: <span id="quote-valid-until"
+              class="font-mono"></span>
+          </div>
+          <button onclick="closeModal(); alert('Saved!');"
+            class="w-full py-4 bg-brand-accent text-brand-dark font-bold rounded-xl shadow-lg shadow-brand-accent/20"
+            data-i18n="modals.quoteResult.btnSavePdf">Save PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Error Modal -->
+    <div id="modal-trackError" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-sm rounded-2xl shadow-2xl p-8 text-center animate-in zoom-in-95 duration-200">
+        <div
+          class="w-16 h-16 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="alert-circle" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2" data-i18n="modals.tracking.errorTitle">Details
+          Not Found</h3>
+        <p id="track-error-msg" class="text-slate-500 mb-6"></p>
+        <button onclick="closeModal()"
+          class="px-6 py-2 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 rounded-lg font-medium transition-colors">Close</button>
+      </div>
+    </div>
+
+    <!-- Legal Modals (Privacy / Terms / Sitemap / Global Network) -->
+    <!-- Just basic structures populated somewhat statically or by generic renders -->
+
+    <div id="modal-privacy" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-2xl rounded-2xl shadow-2xl p-8 max-h-[80vh] overflow-y-auto animate-in zoom-in-95 duration-200">
+        <button onclick="closeModal()" class="absolute top-6 right-6"><i data-lucide="x"
+            class="w-6 h-6 text-slate-400"></i></button>
+        <h2 class="text-2xl font-bold mb-4" data-i18n="general.privacyPolicy">Privacy Policy</h2>
+        <div class="prose dark:prose-invert text-sm text-slate-600 dark:text-slate-300">
+          <p data-i18n="modals.legal.privacyContent"></p>
+          <!-- More generic content could be injected here if needed -->
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-terms" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-2xl rounded-2xl shadow-2xl p-8 max-h-[80vh] overflow-y-auto animate-in zoom-in-95 duration-200">
+        <button onclick="closeModal()" class="absolute top-6 right-6"><i data-lucide="x"
+            class="w-6 h-6 text-slate-400"></i></button>
+        <h2 class="text-2xl font-bold mb-4" data-i18n="general.termsOfService">Terms of Service</h2>
+        <div class="prose dark:prose-invert text-sm text-slate-600 dark:text-slate-300">
+          <p data-i18n="modals.legal.termsContent"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Network Modal -->
+    <div id="modal-globalNetwork"
+      class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-4xl rounded-2xl shadow-2xl p-8 max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
+        <button onclick="closeModal()" class="absolute top-6 right-6"><i data-lucide="x"
+            class="w-6 h-6 text-slate-400"></i></button>
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-2">
+            <i data-lucide="globe-2" class="w-6 h-6 text-brand-accent"></i>
+            <h2 class="text-2xl font-bold dark:text-white" data-i18n="modals.globalNetwork.title">Global Network</h2>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400" data-i18n="modals.globalNetwork.description">We operate in over
+            150 countries...</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Asia -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-white/5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-accent"></i>
+              <h3 id="network-title-asia" class="font-bold text-slate-900 dark:text-white">Asia</h3>
+            </div>
+            <ul id="network-list-asia" class="text-sm text-slate-600 dark:text-slate-400 space-y-2"></ul>
+          </div>
+          <!-- Europe -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-white/5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-accent"></i>
+              <h3 id="network-title-europe" class="font-bold text-slate-900 dark:text-white">Europe</h3>
+            </div>
+            <ul id="network-list-europe" class="text-sm text-slate-600 dark:text-slate-400 space-y-2"></ul>
+          </div>
+          <!-- North America -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-white/5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-accent"></i>
+              <h3 id="network-title-na" class="font-bold text-slate-900 dark:text-white">North America</h3>
+            </div>
+            <ul id="network-list-na" class="text-sm text-slate-600 dark:text-slate-400 space-y-2"></ul>
+          </div>
+          <!-- Middle East -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-white/5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-accent"></i>
+              <h3 id="network-title-me" class="font-bold text-slate-900 dark:text-white">Middle East</h3>
+            </div>
+            <ul id="network-list-me" class="text-sm text-slate-600 dark:text-slate-400 space-y-2"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Catalog Modal -->
+    <div id="modal-fullCatalog" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-3xl rounded-2xl shadow-2xl p-8 max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
+        <button onclick="closeModal()" class="absolute top-6 right-6"><i data-lucide="x"
+            class="w-6 h-6 text-slate-400"></i></button>
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold dark:text-white" data-i18n="modals.serviceCatalog.title">Service Catalog</h2>
+            <p class="text-sm text-slate-500" data-i18n="modals.serviceCatalog.downloadTitle">Download Full Brochure</p>
+          </div>
+          <button onclick="alert('Download Started')"
+            class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-white/5 hover:bg-brand-accent hover:text-brand-dark rounded-lg transition-colors text-sm font-medium">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span data-i18n="modals.serviceCatalog.btnDownload">Download PDF</span>
+          </button>
+        </div>
+
+        <!-- Simple Mock Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-50 dark:bg-white/5 text-slate-500 uppercase font-bold text-xs">
+              <tr>
+                <th class="px-4 py-3 rounded-l-lg" data-i18n="modals.serviceCatalog.tableHeaders.ref">Ref Code</th>
+                <th class="px-4 py-3" data-i18n="modals.serviceCatalog.tableHeaders.name">Service Name</th>
+                <th class="px-4 py-3 rounded-r-lg" data-i18n="modals.serviceCatalog.tableHeaders.action">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-white/5">
+              <tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-slate-400">SEA-FCL</td>
+                <td class="px-4 py-3 font-medium dark:text-slate-200">Sea Freight - Full Container Load</td>
+                <td class="px-4 py-3 text-brand-accent cursor-pointer">View</td>
+              </tr>
+              <tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-slate-400">SEA-LCL</td>
+                <td class="px-4 py-3 font-medium dark:text-slate-200">Sea Freight - Less than Container</td>
+                <td class="px-4 py-3 text-brand-accent cursor-pointer">View</td>
+              </tr>
+              <tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-slate-400">AIR-EXP</td>
+                <td class="px-4 py-3 font-medium dark:text-slate-200">Air Freight - Express</td>
+                <td class="px-4 py-3 text-brand-accent cursor-pointer">View</td>
+              </tr>
+              <tr class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-slate-400">LND-FTL</td>
+                <td class="px-4 py-3 font-medium dark:text-slate-200">Land Transport - FTL</td>
+                <td class="px-4 py-3 text-brand-accent cursor-pointer">View</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-sitemap" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div
+        class="relative bg-white dark:bg-[#0F172A] w-full max-w-lg rounded-2xl shadow-2xl p-8 animate-in zoom-in-95 duration-200">
+        <button onclick="closeModal()" class="absolute top-6 right-6"><i data-lucide="x"
+            class="w-6 h-6 text-slate-400"></i></button>
+        <h2 class="text-2xl font-bold mb-6" data-i18n="general.sitemap">Sitemap</h2>
+        <div class="grid grid-cols-2 gap-8 text-sm">
+          <div>
+            <h3 class="font-bold text-brand-accent mb-3" data-i18n="modals.sitemap.headers.main">Main Sections</h3>
+            <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+              <li><a href="#home" onclick="closeModal()" class="hover:text-brand-accent"
+                  data-i18n="nav.0.label">Home</a></li>
+              <li><a href="#services" onclick="closeModal()" class="hover:text-brand-accent"
+                  data-i18n="nav.1.label">Services</a></li>
+              <li><a href="#live-dashboard" onclick="closeModal()" class="hover:text-brand-accent"
+                  data-i18n="nav.2.label">Status</a></li>
+              <li><a href="#about" onclick="closeModal()" class="hover:text-brand-accent" data-i18n="nav.3.label">About
+                  Us</a></li>
+              <li><a href="#contact" onclick="closeModal()" class="hover:text-brand-accent"
+                  data-i18n="nav.4.label">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-brand-accent mb-3" data-i18n="modals.sitemap.headers.legal">Legal</h3>
+            <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+              <li><button onclick="closeModal(); openModal('privacy')" class="hover:text-brand-accent"
+                  data-i18n="general.privacyPolicy">Privacy
+                  Policy</button></li>
+              <li><button onclick="closeModal(); openModal('terms')" class="hover:text-brand-accent"
+                  data-i18n="general.termsOfService">Terms of
+                  Service</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+:root {
+    --brand-accent: #f59e0b;
+    --brand-accent-rgb: 245, 158, 11;
+    --brand-glow: #fbbf24;
+    --brand-dark: #0f172a;
+    --kinetic-transition: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Custom Styles from original index.html */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    /* Slate 100 */
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #0F172A;
+    /* Slate 900 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    /* Slate 300 */
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+    /* Slate 700 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Advanced Card Glow */
+.card-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(245, 158, 11, 0.12), transparent 40%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.card-glow:hover::before {
+    opacity: 1;
+}
+
+/* Button Sheen Effect */
+.btn-sheen {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-sheen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn-sheen:hover::after {
+    left: 100%;
+    transition: 0.5s;
+}
+
+/* Grid Background Pattern */
+.bg-grid-slate {
+    background-image: linear-gradient(to right, rgba(99, 102, 112, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(99, 102, 112, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.dark .bg-grid-slate {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Watermark Text */
+.watermark-text {
+    position: absolute;
+    font-size: 15vw;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(99, 102, 112, 0.03);
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+    white-space: nowrap;
+}
+
+.dark .watermark-text {
+    color: rgba(255, 255, 255, 0.02);
+}
+
+/* Modal Open Body Lock */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Dashboard Equal Height Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+/* Light Theme Terminal */
+.terminal-light {
+    background: #F8FAFC;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.terminal-header-light {
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Dark Theme Terminal */
+.dark .terminal-light {
+    background: #0F172A;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark .terminal-header-light {
+    background: #1E293B;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Specific Log Styling for Light Theme */
+.log-entry-light {
+    border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+}
+
+.log-entry-light:last-child {
+    border-bottom: none;
+}
+
+/* Service Card Progress Bar Animation */
+.progress-bar-fill {
+    width: 0;
+    transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-card:hover .progress-bar-fill {
+    width: var(--progress-value);
+}
+
+/* Logo Mark Animation */
+.logo-prism {
+    transition: transform 0.6s var(--kinetic-transition);
+}
+
+.group:hover .logo-prism {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.nav-link {
+    transition: color 0.4s var(--kinetic-transition);
+}
+
+button,
+.service-card,
+.mode-btn {
+    transition: all 0.5s var(--kinetic-transition) !important;
+}
+
+/* Custom Select Styles */
+.custom-select-option {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.dark .custom-select-option {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.custom-select-option:last-child {
+    border-bottom: none;
+}
+
+.custom-select-option:hover {
+    background: rgba(var(--brand-accent-rgb), 0.1);
+    color: var(--brand-accent);
+    padding-left: 20px;
+}
+
+.custom-select-option.selected {
+    background: rgba(var(--brand-accent-rgb), 0.15);
+    color: var(--brand-accent);
+    font-weight: 700;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(var(--brand-accent-rgb), 0.3);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-accent);
+}
+
+/* Language Dropdown Active State */
+.lang-active {
+    pointer-events: none;
+    background: rgba(var(--brand-accent-rgb), 0.15) !important;
+    color: var(--brand-accent) !important;
+    font-weight: 600;
+}
+
+.dark .lang-active {
+    background: rgba(var(--brand-accent-rgb), 0.2) !important;
+}
+
+/* Animations */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#quote-origin-options:not(.hidden),
+#quote-dest-options:not(.hidden) {
+    animation: dropdownFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
