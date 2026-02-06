@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  prettier-noncode:
+  prettier-workflow:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -18,11 +18,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prettier (non-code files)
-        run: |
-          npx --yes prettier@3.3.3 --check \
-            '**/*.md' \
-            '**/*.json' \
-            '**/*.yml' \
-            '**/*.yaml' \
-            '.github/**/*'
+      - name: Prettier (workflow)
+        run: npx --yes prettier@3.3.3 --check .github/workflows/quality.yml
