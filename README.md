@@ -1,82 +1,291 @@
-# Senibo.shop | Global Logistics & Trade Solutions
+<div align="right">
+
+**Language**: [🇺🇸 English](README.md) | [🇹🇼 繁體中文](README.zh-TW.md)
+
+</div>
+
+<div align="center">
+
+# 🌐 Senibo.shop | Global Logistics & Trade Solutions
+
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://eugenewu1019.github.io/seniboshop/)
+[![CI/CD](https://github.com/eugenewu1019/seniboshop/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/eugenewu1019/seniboshop/actions)
+[![CodeQL](https://github.com/eugenewu1019/seniboshop/actions/workflows/codeql.yml/badge.svg)](https://github.com/eugenewu1019/seniboshop/actions)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+**Seamless Global Logistics. Real-time Intelligence.**
+
+[Live Demo](https://eugenewu1019.github.io/seniboshop/) · [Report Bug](https://github.com/eugenewu1019/seniboshop/issues) · [Request Feature](https://github.com/eugenewu1019/seniboshop/issues) · [Discussions](https://github.com/eugenewu1019/seniboshop/discussions)
 
 ![Project Banner](https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80)
 
-> **[Live Demo](https://eugenewu1019.github.io/seniboshop/)**  
-> *Seamless Global Logistics. Real-time Intelligence.*
+</div>
 
-## 📖 Introduction (專案簡介)
+---
 
-**Senibo.shop** is a premium, futuristic logistics platform design concept. It demonstrates a sophisticated transition from complex React architectures to a highly optimized, high-performance **Static (Vanilla JS + Tailwind)** implementation.
+## 📚 Table of Contents
 
-**Senibo.shop** 是一個高端且充滿未來感的物流平台設計概念。本專案展示了從複雜的 React 架構轉向高度優化、高效能的 **純原生 JavaScript (Vanilla JS) + Tailwind CSS** 實作過程。
+- [About The Project](#-about-the-project)
+- [Key Features](#-key-features)
+- [Tech Stack](#️-tech-stack)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
-The project focuses on "Micro-glow" aesthetics and "Atmospheric Blur" to create a professional yet cutting-edge user experience, ensuring the platform feels like a high-end enterprise tool while maintaining instantaneous load times.
+---
 
-專案核心在於「微光美學 (Micro-glow)」與「暈染氛圍 (Atmospheric Blur)」，打造專業且前衛的使用者體驗，確保平台在保有極速載入速度的同時，具備高端企業級工具的質感。
+## 🎯 About The Project
 
-## ✨ Key Features (核心特色)
+**Senibo.shop** is a premium, futuristic logistics platform design concept that demonstrates a sophisticated approach to modern web development. The project showcases a transition from complex React architectures to a highly optimized, **pure Vanilla JavaScript + Tailwind CSS** implementation.
 
--   **🌍 Bilingual Support (中英日多語系)**:
-    -   Complete i18n implementation supporting English, Traditional Chinese, and Japanese with instant switching.
-    -   完整的多語系支援（英文 / 繁體中文 / 日文），支援即時切換。
+### Why This Project?
 
--   **📊 Operations Dashboard (即時維運儀表板)**:
-    -   Simulated "Mission Control" center with multi-timezone clocks, live system logs, and fluctuating network metrics.
-    -   模擬「任務控制中心」，包含多時區時鐘、即時系統日誌以及動態變化的網路數據指標。
+- 🎨 **Design Excellence**: Showcase "Micro-glow" aesthetics and "Atmospheric Blur" for a cutting-edge UI/UX
+- ⚡ **Performance First**: Achieve instant load times with zero build tools and minimal dependencies
+- 🌍 **Multilingual**: Complete i18n implementation (EN/ZH/JA) demonstrating internationalization without frameworks
+- 📊 **Real-time Dashboard**: Simulated "Mission Control" with live metrics and multi-timezone support
+- 💡 **Modern Vanilla JS**: Prove that sophisticated interactions don't require heavy frameworks
 
--   **🧮 Smart Quote Engine (智慧報價引擎)**:
-    -   Interactive freight cost calculator with dynamic validation for Sea, Air, and Land logistics.
-    -   互動式運費計算器，支援海、空、陸運的即時數據校驗與動態報價。
+---
 
--   **🎨 Premium UI/UX (高端視覺交互)**:
-    -   **Micro-glow Effects**: Subtle ambient light and shadow for an immersive dark mode experience.
-    -   **Kinetic Typography**: Editorial-style typography using *Outfit* and *Inter* for maximum readability.
-    -   **Glassmorphism**: Sophisticated backdrop blur and parallax-floating elements.
+## ✨ Key Features
 
-## 🛠️ Tech Stack (技術棧)
+### 🌍 Bilingual Support (Trilingual)
+- Complete internationalization supporting:
+  - 🇺🇸 English
+  - 🇹🇼 Traditional Chinese (繁體中文)
+  - 🇯🇵 Japanese (日本語)
+- Instant language switching with localStorage persistence
+- SEO-friendly with proper language meta tags
 
-Built with a philosophy of performance and architectural cleanliness, utilizing modern web standards.
+### 📊 Operations Dashboard
+- **Mission Control Center**: Simulated real-time operations monitoring
+- **Multi-timezone Clocks**: Live time display for major logistics hubs
+- **System Logs**: Dynamic activity feed with realistic status updates
+- **Network Metrics**: Fluctuating statistics to simulate real-time data
 
-本專案強調節能與效能，採用現代 Web 標準開發，確保架構簡潔且執行快速。
+### 🧠 Smart Quote Engine
+- Interactive freight cost calculator
+- Dynamic validation and error handling
+- Support for Sea, Air, and Land logistics
+- Real-time cost estimation
 
--   **Core**: HTML5, Vanilla JavaScript (ES6+).
--   **Styling**: [Tailwind CSS](https://tailwindcss.com/) (CDN) - Enterprise-grade utility styling.
--   **Architecture**: "Component-Based" mental model in static files.
--   **Icons**: Lucide Icons (SVG).
--   **Typography**: *Outfit* (Headings) & *Inter* (Body) via Google Fonts.
+### 🎨 Premium UI/UX
+- **Micro-glow Effects**: Subtle ambient lighting for immersive dark mode
+- **Kinetic Typography**: Editorial-style using *Outfit* and *Inter* fonts
+- **Glassmorphism**: Sophisticated backdrop blur and floating elements
+- **Responsive Design**: Perfect on all devices from mobile to 4K displays
 
-## 🚀 Getting Started (如何執行)
+---
 
-No heavy build steps or `npm install` required.
+## 🛠️ Tech Stack
 
-無需任何繁重的建置步驟或環境安裝。
+Built with a philosophy of performance and architectural simplicity, utilizing modern web standards without build tools.
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/eugenewu1019/seniboshop.git
-    ```
-2.  **Open `index.html`**:
-    Simply open the file in your browser or use a live server (e.g., `python3 -m http.server`) for the best experience.
-    直接在瀏覽器中開啟 `index.html`，或使用 Live Server 插件以獲得最佳預覽體驗。
+### Core Technologies
+- **HTML5** - Semantic markup and accessibility
+- **Vanilla JavaScript (ES6+)** - Modern JS features without frameworks
+- **CSS3** - Custom animations and glassmorphism effects
 
-## 📂 Project Structure (專案結構)
+### Styling
+- [Tailwind CSS](https://tailwindcss.com/) (CDN) - Utility-first CSS framework
+- Custom CSS for animations and special effects
+
+### Design
+- [Lucide Icons](https://lucide.dev/) - Beautiful, consistent SVG icons
+- [Google Fonts](https://fonts.google.com/) - *Outfit* (Headings) & *Inter* (Body)
+
+### Architecture
+- **Component-Based Mental Model**: Organized static files with clear separation
+- **Data-Driven**: Centralized content database for easy updates
+- **Event-Driven**: Clean event handling without dependencies
+
+---
+
+## 🚀 Getting Started
+
+**No build steps. No npm install. Just open and run.**
+
+### Prerequisites
+
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- (Optional) Live Server extension for hot reload
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/eugenewu1019/seniboshop.git
+   cd seniboshop
+   ```
+
+2. **Open in browser**
+   
+   **Option A**: Direct open
+   ```bash
+   # Simply open index.html in your browser
+   open index.html
+   ```
+
+   **Option B**: Python HTTP server
+   ```bash
+   python3 -m http.server 8000
+   # Navigate to http://localhost:8000
+   ```
+
+   **Option C**: VS Code Live Server
+   - Install "Live Server" extension
+   - Right-click on `index.html`
+   - Select "Open with Live Server"
+
+---
+
+## 📂 Project Structure
 
 ```text
 seniboshop/
-├── index.html       # Main DOM Structure (Tailwind classes)
-├── style.css        # Custom Animations & Glassmorphism
-├── script.js        # Core Logic (i18n, Interactive State)
-├── data.js          # Content Database (Translations, Metrics)
-├── logo.svg         # Identity assets
-└── README.md        # Documentation
+├── index.html           # Main HTML structure with Tailwind classes
+├── style.css            # Custom animations & glassmorphism effects
+├── script.js            # Core application logic
+├── data.js              # i18n content database & translations
+├── logo.svg             # Brand identity assets
+├── README.md            # This file
+├── README.zh-TW.md      # Traditional Chinese version
+├── LICENSE              # MIT License
+├── CONTRIBUTING.md      # Contribution guidelines
+├── SECURITY.md          # Security policy
+└── .github/
+    ├── workflows/
+    │   ├── ci-cd.yml        # CI/CD pipeline
+    │   └── codeql.yml       # Security scanning
+    └── pull_request_template.md
 ```
 
-## 👨‍💻 Author
+---
 
-**Eugene Wu**
--   Portfolio: [GitHub](https://github.com/eugenewu1019)
--   Focus: High-Performance UI/UX & React Ecosystem.
+## 🚀 Deployment
+
+### GitHub Pages (Current Setup)
+
+The project is configured to automatically deploy to GitHub Pages on push to `main`.
+
+1. **Enable GitHub Pages**
+   - Settings → Pages → Source: GitHub Actions
+
+2. **Push to main branch**
+   ```bash
+   git push origin main
+   ```
+
+3. **GitHub Actions will automatically**:
+   - Validate HTML
+   - Check for broken links
+   - Deploy to GitHub Pages
+
+### Alternative Deployment Options
+
+<details>
+<summary><b>Netlify</b></summary>
+
+1. Connect your repository
+2. Build command: (leave empty)
+3. Publish directory: `/`
+4. Deploy!
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/eugenewu1019/seniboshop)
+
+</details>
+
+<details>
+<summary><b>Vercel</b></summary>
+
+1. Import repository
+2. No framework preset needed
+3. Deploy!
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/eugenewu1019/seniboshop)
+
+</details>
 
 ---
-*© 2026 Senibo.shop. All Rights Reserved.*
+
+## 🤝 Contributing
+
+Contributions are what make the open source community amazing! Any contributions you make are **greatly appreciated**.
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
+
+- Code of Conduct
+- Development process
+- How to submit pull requests
+- Coding standards
+- Commit message conventions
+
+### Quick Start for Contributors
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Test your changes in multiple browsers
+4. Commit your Changes (`git commit -m 'feat: add some AmazingFeature'`)
+5. Push to the Branch (`git push origin feature/AmazingFeature`)
+6. Open a Pull Request
+
+---
+
+## 🐛 Bug Reports & Feature Requests
+
+Found a bug or have a feature idea?
+
+- **Bug Reports**: [Create an issue](https://github.com/eugenewu1019/seniboshop/issues/new?template=bug_report.md)
+- **Feature Requests**: [Create an issue](https://github.com/eugenewu1019/seniboshop/issues/new?template=feature_request.md)
+- **Questions**: [Start a discussion](https://github.com/eugenewu1019/seniboshop/discussions)
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
+
+---
+
+## 📬 Contact
+
+**Eugene Wu** - UI/UX Designer & Frontend Developer
+
+- LinkedIn: [@owenwuwork](https://www.linkedin.com/in/owenwuwork)
+- GitHub: [@eugenewu1019](https://github.com/eugenewu1019)
+- Portfolio: [Coming Soon]
+
+**Project Link**: [https://github.com/eugenewu1019/seniboshop](https://github.com/eugenewu1019/seniboshop)
+
+**Live Demo**: [https://eugenewu1019.github.io/seniboshop/](https://eugenewu1019.github.io/seniboshop/)
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+
+- [Tailwind CSS](https://tailwindcss.com/) - Amazing utility-first framework
+- [Lucide Icons](https://lucide.dev/) - Beautiful icon set
+- [Google Fonts](https://fonts.google.com/) - *Outfit* and *Inter* typefaces
+- [Unsplash](https://unsplash.com/) - High-quality imagery
+
+---
+
+<div align="center">
+
+**[⬆️ Back to top](#-senibioshop--global-logistics--trade-solutions)**
+
+Made with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)
+
+© 2026 Senibo.shop. All Rights Reserved.
+
+</div>

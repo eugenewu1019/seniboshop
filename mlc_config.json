@@ -1,0 +1,21 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://github\.com/eugenewu1019/seniboshop/discussions"
+    },
+    {
+      "pattern": "^https://www\.linkedin\.com/"
+    },
+    {
+      "pattern": "^https://unsplash\.com/"
+    },
+    {
+      "pattern": "^https://images\.unsplash\.com/"
+    }
+  ],
+  "aliveStatusCodes": [200, 206, 429],
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "5s",
+  "timeout": "10s"
+}
