@@ -71,7 +71,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(245, 158, 11, 0.12), transparent 40%);
+    background: radial-gradient(circle 800px at var(--mouse-x) var(--mouse-y), rgba(245, 158, 11, 0.12), transparent 40%);
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s;
